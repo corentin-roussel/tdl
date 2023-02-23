@@ -13,28 +13,21 @@
 
         $verif = $req->rowCount();
 
-        if($verif == 1)
-        {
+        if ($verif == 1) {
             $user = $req->fetch(PDO::FETCH_ASSOC);
 
-            if($password == $user['password'])
-            {
-                $user = array('login' => $user['login'], 'password' => $user['password'], 'email' => $user['email']);
-
-                $_SESSION['user'] = $user;
-
+            if (password_verify($password, $user['password'])) {
+                $_SESSION['user'] = array('id' => $user['id'], 'login' => $user['login'], 'password' => $user['password'], 'email' => $user['email']);
             }
 
 
-
-        }
-        else
-        {
+        } else {
             $err_message = "le nom d'utilisateur ou le mot de passe est incorrect";
         }
 
+
     }
-    var_dump($_SESSION['user']);
+var_dump($_SESSION['user']);
 ?>
 
 <form class="form" id="connexion-form" method="POST">

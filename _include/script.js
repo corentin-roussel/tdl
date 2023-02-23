@@ -1,14 +1,5 @@
 let main = document.querySelector("main")
 
-let buttonreg = document.createElement("button")
-buttonreg.setAttribute("id", "inscription")
-buttonreg.textContent = "Inscription"
-main.appendChild(buttonreg)
-
-let buttoncon = document.createElement("button")
-buttoncon.setAttribute("id", "connexion")
-buttoncon.textContent = "Connexion"
-main.appendChild(buttoncon)
 
 let div = document.createElement("div");
 div.setAttribute("id", "place");
@@ -16,7 +7,11 @@ main.appendChild(div);
 
 let inscription = document.querySelector("#inscription");
 let connexion = document.querySelector("#connexion");
+let deconnexion = document.querySelector("#deconnexion")
 let place = document.querySelector("#place");
+
+// deconnexion.setAttribute("onclick", "window.location.href='deconnexion.php'")
+
 
 inscription.addEventListener("click", () => {
     fetch('inscription.php')
@@ -64,4 +59,9 @@ connexion.addEventListener('click', () => {
                 })
             })
         })
+})
+
+deconnexion.addEventListener("click", () => {
+
+    window.location.href='deconnexion.php'
 })

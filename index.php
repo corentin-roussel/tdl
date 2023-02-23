@@ -1,5 +1,7 @@
 <?php
     session_start();
+
+
 ?>
 
 <!doctype html>
@@ -14,7 +16,6 @@
         <?php require_once ('_include/header.php') ?>
     </header>
     <main>
-
     </main>
     <footer>
 
